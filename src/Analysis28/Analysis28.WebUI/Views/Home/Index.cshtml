@@ -1,0 +1,15 @@
+﻿@Model List<UsersInfo>
+@{
+    ViewBag.Title = "首页";
+    Layout = "~/Views/Shared/_Main.cshtml";
+}
+@section Content
+{
+    <h2>首页</h2>
+    <ul>
+        @foreach(var item in Model)
+        {
+            <li>SysNo:@(item.SysNo)     UserID:@(item.UserID)       UserPwd:@(item.UserPwd)</li>
+        }
+    </ul>
+}

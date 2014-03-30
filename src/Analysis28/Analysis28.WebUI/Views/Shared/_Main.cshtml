@@ -1,0 +1,16 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@(string.IsNullOrWhiteSpace(ViewBag.Title) ? "" : ViewBag.Title + " - ")28分析</title>
+    <link href="~/Resources/css/global.css" rel="stylesheet" />
+    <script src="../../Resources/js/jquery-1.9.1.js" type="text/javascript"></script>
+    <script src="../../Resources/js/jquery.ui.position.min.js" type="text/javascript"></script>
+    <script src="../../Resources/js/tools/placeholder.js" type="text/javascript"></script>
+</head>
+<body>
+     @Html.Partial("_Header")
+     @RenderSection("Content", true)
+     @Html.Partial("_Footer")
+</body>
+</html>
