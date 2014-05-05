@@ -1,0 +1,10 @@
+D:\ProjectCollection\PersonalWork\Analysis28\src\Analysis28\Analysis28.Entity\bin\Debug\Analysis28.Entity.dll
+D:\ProjectCollection\PersonalWork\Analysis28\src\Analysis28\Analysis28.Entity\bin\Debug\Analysis28.Entity.pdb
+D:\ProjectCollection\PersonalWork\Analysis28\src\Analysis28\Analysis28.Entity\obj\Debug\ResolveAssemblyReference.cache
+D:\ProjectCollection\PersonalWork\Analysis28\src\Analysis28\Analysis28.Entity\obj\Debug\Analysis28.Entity.dll
+D:\ProjectCollection\PersonalWork\Analysis28\src\Analysis28\Analysis28.Entity\obj\Debug\Analysis28.Entity.pdb
+D:\ProjectCollection\PersonalWork\NumberAnalysis\src\Web\Analysis28\Analysis28.Entity\bin\Debug\Analysis28.Entity.dll
+D:\ProjectCollection\PersonalWork\NumberAnalysis\src\Web\Analysis28\Analysis28.Entity\bin\Debug\Analysis28.Entity.pdb
+D:\ProjectCollection\PersonalWork\NumberAnalysis\src\Web\Analysis28\Analysis28.Entity\obj\Debug\ResolveAssemblyReference.cache
+D:\ProjectCollection\PersonalWork\NumberAnalysis\src\Web\Analysis28\Analysis28.Entity\obj\Debug\Analysis28.Entity.dll
+D:\ProjectCollection\PersonalWork\NumberAnalysis\src\Web\Analysis28\Analysis28.Entity\obj\Debug\Analysis28.Entity.pdb
