@@ -1,4 +1,10 @@
-SET IDENTITY_INSERT [Users] ON
-Insert Into [Users] ([SysNo],[UserID],[UserPwd]) Values('10001','TestUser','202cb962ac59075b964b07152d234b70')
-Insert Into [Users] ([SysNo],[UserID],[UserPwd]) Values('10002','TestUser1','202cb962ac59075b964b07152d234b70')
-SET IDENTITY_INSERT [Users] OFF
+Insert Into [UseSource] ([SysNo],[SourceName]) Values('10001','北京')
+Insert Into [UseSource] ([SysNo],[SourceName]) Values('10002','加拿大')
+
+Insert Into [UseSite] ([SysNo],[SiteName],[Comment]) Values('10001','龙虎',null)
+Insert Into [UseSite] ([SysNo],[SiteName],[Comment]) Values('10002','71豆',null)
+Insert Into [UseSite] ([SysNo],[SiteName],[Comment]) Values('10003','芝麻西西',null)
+
+
+Insert Into [UseGame] ([SysNo],[GameName]) Values('10001','28')
+Insert Into [UseGame] ([SysNo],[GameName]) Values('10002','PK10')
