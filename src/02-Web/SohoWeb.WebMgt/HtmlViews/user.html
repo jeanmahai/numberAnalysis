@@ -1,0 +1,95 @@
+﻿<div class="pure-g">
+    <div class="pure-u-1">
+        <div class="header">
+            <div class="title">用户管理</div>
+            <div class="button-bar">
+                <a href="#/user/add">添加新用户</a><a href="javascript:void(0)" ng-click="user.remove()">删除所选用户</a>
+            </div>
+        </div>
+    </div>
+    <div class="pure-u-1">
+        <form class="pure-form">
+            <fieldset>
+                <legend></legend>
+                <div class="pure-g">
+                    <div class="pure-u-1-6">
+                        <label>
+                            <span>用户SysNo:</span><input type="text" class="pure-input-2-3" ng-model="user.data.SysNo" />
+                        </label>
+                    </div>
+                    <div class="pure-u-1-6">
+                        <label>
+                            <span>用户ID:</span><input type="text" class="pure-input-2-3" ng-model="user.data.UserID" />
+                        </label>
+                    </div>
+                    <div class="pure-u-1-6">
+                        <label>
+                            <span>用户名:</span><input type="text" class="pure-input-2-3" ng-model="user.data.UserName" />
+                        </label>
+                    </div>
+                    <div class="pure-u-1-6">
+                        <label>
+                            <span>状态:</span><select class="pure-input-2-3" ng-model="user.data.Status">
+                                <option ng-repeat="item in userStatus" value="{{item.Key}}">{{item.Value}}</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div class="pure-u-1-6">
+                        <button class="pure-button button-secondary" ng-click="user.query()">
+                            查询 <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                    <div class="pure-u-1-6">
+                    </div>
+                </div>
+
+            </fieldset>
+        </form>
+    </div>
+    <div class="pure-u-1">
+        <table class="pure-table" style="width: 100%;">
+            <thead>
+                <tr>
+                    <th>
+                        <!--<input type="checkbox" onclick="checkAll(this)"/>--></th>
+                    <th>#</th>
+                    <th>用户ID</th>
+                    <th>用户名</th>
+                    <th>状态</th>
+                    <th>最后修改时间</th>
+                    <th>最后修改人</th>
+                    <th>创建时间</th>
+                    <th>创建人</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="a in user.list">
+                    <td>
+                        <input type="checkbox" value="{{a.SysNo}}" ng-model="a.Checked"/></td>
+                    <td><a href="#/user/{{a.SysNo}}">{{a.SysNo}}</a></td>
+                    <td>{{a.UserID}}</td>
+                    <td>{{a.UserName}}</td>
+                    <td>{{a.StatusText}}</td>
+                     <td>{{a.EditDate}}</td>
+                    <td>{{a.EditUserName}}</td>
+                    <td>{{a.InDate}}</td>
+                    <td>{{a.InUserName}}</td>
+                    <td>
+                        <a href="#/user/allot/role/{{a.SysNo}}" class="pure-button">添加角色&nbsp;<i class="fa fa-edit"></i></a>
+                        <a href="#/user/allot/fun/{{a.SysNo}}" class="pure-button">添加权限&nbsp;<i class="fa fa-edit"></i></a></td>
+                </tr>
+            </tbody>
+        </table>
+        <ul class="pure-paginator" my-pager ng-model="pager" first-load="true">
+            <li><a class="pure-button prev" href="#">&#171;</a></li>
+            <li ng-repeat="a in pager.pages"><a class="pure-button" ng-click="pager.goto(a)">{{a}}</a></li>
+            <li><a class="pure-button next" href="#">&#187;</a></li>
+        </ul>
+    </div>
+</div>
+<script type="text/javascript">
+    //function checkAll(tar) {
+    //    $("[ng-model='a.Checked']").prop("checked", $(tar).prop("checked"));
+    //}
+</script>

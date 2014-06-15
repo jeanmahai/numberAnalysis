@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "登录 - 中酒网CRM";
+}
+<head>
+    <title>@(ViewBag.Title)</title>
+    <link href="../../res/css/style.css" rel="stylesheet" />
+    <link href="../../bower_components/pure/pure-min.css" rel="stylesheet" />
+    <style type="text/css">
+        .frm { position: absolute; color: white; top: 346px; left: 288px; }
+            .frm li { list-style: none; margin: 10px 0; }
+            .frm label { width: 120px; text-align: right; display: inline-block; padding: 5px 5px; }
+            .frm input { background: rgb(26,26,26); border: none; padding: 5px; width: 262px; }
+        .btnLogin { position: absolute; top: 395px; left: 840px; color: rgb(95,11,15); text-decoration: none; font-weight: bold; font-size: 1.3em; }
+    </style>
+</head>
+<body style="background: url('../../res/images/login_bg.png') no-repeat">
+<form method="post" action="/SystemUser/Login">
+    <ul class="frm">
+        <li>
+            <label>用户名:</label><input name="LoginID" type="text" placeholder="请输入用户名" /></li>
+        <li>
+            <label>密  码:</label><input name="LoginPassword" type="password" placeholder="请输入密码" /></li>
+    </ul>
+    <button class="btnLogin">登录</button>
+    <input type="hidden" name="ReturnUrl" value="@(ViewBag.ReturnUrl)" />
+</form>
+</body>

@@ -1,0 +1,10 @@
+﻿@model Soho.Utility.Web.Framework.PortalResult
+@{
+    ViewBag.Title = "Index";
+    SohoWeb.Entity.ControlPanel.Users data = Model.Data as SohoWeb.Entity.ControlPanel.Users;
+}
+@{
+<h2>@(data.UserID)</h2>
+<h2>@(data.UserName)</h2>
+<h2>@(data.Password)</h2>
+<h2>@(data.UserAuthCode)</h2>}

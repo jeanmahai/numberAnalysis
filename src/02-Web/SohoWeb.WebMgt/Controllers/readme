@@ -1,0 +1,11 @@
+关于script controller的开发规范:
+> 所有的controller都以[Controller]结尾.
+  如:baseController
+> 公共的controller,即是框架级别的controller一般不需要修改,在做业务的时候也不需要做任何修改,都以[下划线]开头.
+  如:_parentController
+> 公共业务部分的controller以首字母大写开头,如:CustomerController.
+> 私有的controller,即是对原来的业务部分或者是公共的controller需要进行重写或者是扩展的,命名方式以小写字母开头,
+  如:myCustomerController.
+> 所有的controller都放在在目录controllers下,不要建子目录,也不要放在其他目录中
+> 在build项目时,controllers下的公共controller,公共业务controller每次build都需要复制到目标工程.
+> 测试的controller以test开头.

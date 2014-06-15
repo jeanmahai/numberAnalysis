@@ -1,0 +1,299 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7A7DF52C-855B-449B-9A3B-60A76E765A8C}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SohoWeb.WebMgt</RootNamespace>
+    <AssemblyName>SohoWeb.WebMgt</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Soho.Utility">
+      <HintPath>..\..\ReferenceLib\Soho.Utility.dll</HintPath>
+    </Reference>
+    <Reference Include="Soho.Utility.Web">
+      <HintPath>..\..\ReferenceLib\Soho.Utility.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ReferenceLib\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ReferenceLib\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ReferenceLib\System.Net.Http.WebRequest.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ReferenceLib\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\AuthMgr.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\ControlPanelController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\MasterController.cs" />
+    <Compile Include="Controllers\SystemUserController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\ControlPanel\FunctionsMaintainVM.cs" />
+    <Compile Include="ViewModels\ControlPanel\LoginAuthVM.cs" />
+    <Compile Include="ViewModels\ControlPanel\LoginInfoVM.cs" />
+    <Compile Include="ViewModels\ControlPanel\ModifyPasswordVM.cs" />
+    <Compile Include="ViewModels\ControlPanel\UserRolesInfoVM.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="HtmlViews\allot_fun.html" />
+    <Content Include="HtmlViews\allot_role.html" />
+    <Content Include="HtmlViews\funs.html" />
+    <Content Include="HtmlViews\funs_insert.html" />
+    <Content Include="HtmlViews\funs_update.html" />
+    <Content Include="HtmlViews\log.html" />
+    <Content Include="HtmlViews\role.html" />
+    <Content Include="HtmlViews\role_allot_fun.html" />
+    <Content Include="HtmlViews\role_insert.html" />
+    <Content Include="HtmlViews\role_update.html" />
+    <Content Include="ScriptController\ControlPanelController.js" />
+    <Content Include="ScriptController\CustomerController.js" />
+    <Content Include="ScriptController\FunsController.js" />
+    <Content Include="ScriptController\HomeController.js" />
+    <Content Include="Global.asax" />
+    <Content Include="HtmlViews\customer.html" />
+    <Content Include="HtmlViews\customer_add.html" />
+    <Content Include="HtmlViews\home.html" />
+    <Content Include="HtmlViews\modifyPsw.html" />
+    <Content Include="HtmlViews\user.html" />
+    <Content Include="HtmlViews\user_add.html" />
+    <Content Include="HtmlViews\user_edit.html" />
+    <Content Include="HtmlViews\user_modify_password.html" />
+    <Content Include="res\app.js" />
+    <Content Include="res\css\css\font-awesome.css" />
+    <Content Include="res\css\css\font-awesome.min.css" />
+    <Content Include="res\css\fonts\fontawesome-webfont.svg" />
+    <Content Include="res\css\style.css" />
+    <Content Include="res\images\add_user.png" />
+    <Content Include="res\images\care.png" />
+    <Content Include="res\images\customers.png" />
+    <Content Include="res\images\default_user.png" />
+    <Content Include="res\images\grid_dot.png" />
+    <Content Include="res\images\grid_small_dot.png" />
+    <Content Include="res\images\home.png" />
+    <Content Include="res\images\info.png" />
+    <Content Include="res\images\internet.png" />
+    <Content Include="res\images\loading.GIF" />
+    <Content Include="res\images\login_bg.png" />
+    <Content Include="res\images\logo.png" />
+    <Content Include="res\images\logout.png" />
+    <Content Include="res\images\logo_1.png" />
+    <Content Include="res\images\n-seg.png" />
+    <Content Include="res\images\psw.png" />
+    <Content Include="res\images\report.png" />
+    <Content Include="res\images\right_header_bg.png" />
+    <Content Include="res\images\star.png" />
+    <Content Include="res\images\tool.png" />
+    <Content Include="res\main.css" />
+    <Content Include="res\main.js" />
+    <Content Include="res\scripts\page_init.js" />
+    <Content Include="ScriptController\LogController.js" />
+    <Content Include="ScriptController\RoleController.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Shared\Error.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SohoWeb.Entity\SohoWeb.Entity.csproj">
+      <Project>{A957FAC5-C6E5-415B-B2B1-654C5263C23F}</Project>
+      <Name>SohoWeb.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SohoWeb.Service\SohoWeb.Service.csproj">
+      <Project>{1EB8735D-D334-4425-B5E7-7022C27D3642}</Project>
+      <Name>SohoWeb.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Configuration\Data\Database.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Configuration\Data\DbCommandFiles.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Configuration\Data\ControlPanel\UserAuth.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Configuration\Cookie.config" />
+    <Content Include="Configuration\Route.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Configuration\BusinessRoute.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ControlPanel\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Login\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="build.bat" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Master\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Error404.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="res\images\logo.psd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Configuration\Data\ControlPanel\UsersMgt.config" />
+    <Content Include="res\css\fonts\fontawesome-webfont.eot" />
+    <Content Include="res\css\fonts\fontawesome-webfont.ttf" />
+    <Content Include="res\css\fonts\fontawesome-webfont.woff" />
+    <Content Include="res\css\fonts\FontAwesome.otf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Configuration\Data\ControlPanel\FunctionsMgt.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Configuration\Data\ControlPanel\RolesMgt.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\AuthError.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Configuration\Data\ControlPanel\LogsMgt.config" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>8500</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:8500/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>http://localhost:8500/</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PreBuildEvent>cd ..
+call build.bat</PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

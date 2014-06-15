@@ -1,0 +1,96 @@
+@-webkit-keyframes delayShow { 
+    from{ opacity: 0; }
+    to { opacity: 1; }
+}
+
+html,
+body,
+.left,
+.right,
+.layout { height: 100%; font-family: Microsoft YaHei; font-size: 0.9em; font-size: 0.94em \9; }
+
+.top { height: 50px; background: rgb(48, 0, 0); }
+    .top div { display: inline-block; }
+    .top .logo { height: 100%; width: 213px; background: url("../images/logo.png") no-repeat; }
+    .top .n-top-menu { height: 100%; vertical-align: top; float: right; margin-right: 50px; }
+        .top .n-top-menu li { list-style: none; }
+            .top .n-top-menu li a { text-decoration: none; color: white; font-size: 0.6em; font-size: 0.9em \9; background: rgb(125,27,26); /*background: rgb(48,48,48);*/ padding: 6px 9px; border-radius: 2px; }
+    .top .n-top-menu2 { height: 100%; vertical-align: top; }
+        .top .n-top-menu2 ul:after { content: "" !important; clear: both !important; }
+        .top .n-top-menu2 li { list-style: none; float: left; margin-left: 40px; }
+        .top .n-top-menu2 a { color: white; text-decoration: none; }
+            .top .n-top-menu2 a img { width: 19px; height: 19px; vertical-align: middle; margin-right: 5px; }
+
+.left { background: rgb(48, 48, 48); overflow: hidden; }
+
+.right { }
+
+    .right .header { background: rgb(120, 26, 26); color: white; padding: 10px 0; background: url("../images/right_header_bg.png") repeat-x; }
+
+        .right .header .title { margin-left: 20px; font-size: 0.7em; font-size: 0.99em \9; font-weight: bold; width: 200px; display: inline-block; }
+        .right .header .button-bar { display: inline-block; float: right; }
+            .right .header .button-bar a { display: inline-block; margin-right: 20px; padding: 1px 10px; color: white; text-decoration: none; text-align: center; border: solid white 1px; border-radius: 9px; }
+                .right .header .button-bar a:hover { background: white; color: rgb(85,10,14); border-radius: 9px; }
+
+.n-seg { height: 9px; background: url("../images/n-seg.png") repeat-x; margin: 0 10px; }
+
+/*自定义menu*/
+.n-menu-header { color: #ffffff; text-align: center; margin: 10px 0; font-size: 0.9em; font-size: 1em \9; }
+.n-menu { background: rgb(48, 48, 48) !important; border: none !important; font-size: 1.3em \9 !important; }
+    .n-menu .pure-menu-heading { font-size: 0.8em; font-weight: bold; border: none; color: rgb(189, 194, 213) !important; cursor: pointer; padding-bottom: 1px; padding-top: 1px; margin-top: 0px; }
+        .n-menu .pure-menu-heading img { width: 16px; height: 16px; /*vertical-align: bottom;*/ margin-right: 10px; position: relative; top: 2px; }
+    .n-menu li a { color: white !important; font-size: 0.7em; font-size: 0.9em \9; padding-top: 1px; padding-bottom: 1px; }
+        .n-menu li a i { /*background: url("../images/star.png") no-repeat;*/ width: 8px; height: 8px; background: rgb(254,242,166); border-radius: 4px; display: inline-block; /*vertical-align: middle;*/ margin-right: 10px; }
+    .n-menu li { margin-left: 20px; }
+        .n-menu li a:hover { background: #761b1b !important; }
+
+/*.n-menu-header {*/
+/*color: rgb(189, 194, 213);*/
+/*font-weight: bold;*/
+/*padding-left: 10px;*/
+/*margin: 10px 0;*/
+
+/*}*/
+
+/*.n-menu {*/
+
+/*}*/
+
+/*.n-menu ul {*/
+/*padding: 0px;*/
+/*margin: 0px;*/
+/*}*/
+
+/*.n-menu li {*/
+/*list-style: none;*/
+/*padding-left: 20px;*/
+/*margin: 5px 0;*/
+/*}*/
+
+/*.n-menu li a {*/
+/*color: white;*/
+/*text-decoration: underline;*/
+/*padding: 10px 0px 10px 0px;*/
+/*font-size: 0.9em;*/
+/*padding-left: 10px;*/
+/*text-decoration: none;*/
+/*}*/
+
+/*.n-menu li img {*/
+/*vertical-align: top;*/
+/*margin-right: 3px;*/
+/*}*/
+.my-form { padding-left: 5px; }
+    .my-form span { display: inline-block; width: 81px; text-align: right; }
+    .my-form .pure-g div { margin: 2px 0 !important; }
+
+.button-secondary { color: white; border-radius: 4px; text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2); background: rgb(66, 184, 221); }
+
+.role-list { padding: 10px 10px 0 10px; }
+    .role-list ul { padding: 0px 5px; margin: 0px; border: solid 1px rgb(223,223,223); }
+    .role-list li { list-style: none; text-align: center; margin: 2px 0px; padding: 5px 0px; border: solid 1px rgb(223,223,223); border-radius: 3px; background: rgb(245,245,245); }
+        .role-list li:hover { cursor: move; }
+    .role-list .title { background: rgb(223,223,223); text-align: center; padding: 8px 0; font-size: 1em; }
+
+
+.pure-table tbody tr { -webkit-animation: delayShow 2.5s; }
