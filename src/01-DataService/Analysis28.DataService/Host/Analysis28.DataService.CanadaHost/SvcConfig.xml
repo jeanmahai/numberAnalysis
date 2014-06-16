@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<config>
+  <ServiceName>28分析加拿大数据采集服务</ServiceName>
+  <ServiceDesciption>28分析加拿大数据采集服务进程，采集加拿大快乐8数据，如果该进程被关闭，则28分析加拿大数据采集服务的某些功能将无法正常运行。</ServiceDesciption>
+  <SqlServices>Data Source = .;User ID = sa; Password = sa!@#;Initial Catalog=Helpmate;Max Pool Size=500;</SqlServices>
+  <PeriodNumUrl>http://lotto.bclc.com/services2/keno/draw/{0}</PeriodNumUrl>
+  <GetNewPeriodNumUrl>http://lotto.bclc.com/services2/keno/draw/{0}</GetNewPeriodNumUrl>
+  <IsDatabaseMsg>1</IsDatabaseMsg>
+  <IsSvcMsg>1</IsSvcMsg>
+  <MailResultNotice>0</MailResultNotice>
+  <MailSendServerAddr>smtp.163.com</MailSendServerAddr>
+  <MailSendServerPort>25</MailSendServerPort>
+  <MailSendAddr>baihe888999@163.com</MailSendAddr>
+  <MailSendPwd>qazwsx123</MailSendPwd>
+  <MailReceiveAddr>zhengyanming2006@126.com,402351612@qq.com</MailReceiveAddr>
+  <!--正式接收地址：15158080999@139.com-->
+  <bjGameArithmetic28>1</bjGameArithmetic28>
+  <bjGameArithmetic16>1</bjGameArithmetic16>
+  <!--校对时间，单位：秒-->
+  <ProofreadTime>-120</ProofreadTime>
+</config>

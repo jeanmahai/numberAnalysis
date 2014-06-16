@@ -1,8 +1,56 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Analysis28.DataService.Utility", "Analysis28.DataService.Utility\Analysis28.DataService.Utility.csproj", "{83035C7B-6026-4730-820E-C3DF4CB70E1C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Analysis28.DataService.DataAccess", "Analysis28.DataService.DataAccess\Analysis28.DataService.DataAccess.csproj", "{BDF04083-24DD-4B4C-ACFE-FB5A09250054}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Analysis28.DataService.Entity", "Analysis28.DataService.Entity\Analysis28.DataService.Entity.csproj", "{328E494E-E9C6-44A0-BB60-FBA7F5303E9C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Analysis28.DataService.Logic", "Analysis28.DataService.Logic\Analysis28.DataService.Logic.csproj", "{5A636CB1-2AE7-4B40-9ADF-AADB94E4926F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Host", "Host", "{1AF2C2DF-88A1-42D8-849D-AA9E077D8D96}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Analysis28.DataService.BeijingHost", "Host\Analysis28.DataService.BeijingHost\Analysis28.DataService.BeijingHost.csproj", "{6B687EA3-A961-4C1D-94C9-EC8B51B4505C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Analysis28.DataService.CanadaHost", "Host\Analysis28.DataService.CanadaHost\Analysis28.DataService.CanadaHost.csproj", "{034F7F21-25A2-4DEF-A05D-AED8D3502707}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{83035C7B-6026-4730-820E-C3DF4CB70E1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83035C7B-6026-4730-820E-C3DF4CB70E1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83035C7B-6026-4730-820E-C3DF4CB70E1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83035C7B-6026-4730-820E-C3DF4CB70E1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDF04083-24DD-4B4C-ACFE-FB5A09250054}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDF04083-24DD-4B4C-ACFE-FB5A09250054}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDF04083-24DD-4B4C-ACFE-FB5A09250054}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDF04083-24DD-4B4C-ACFE-FB5A09250054}.Release|Any CPU.Build.0 = Release|Any CPU
+		{328E494E-E9C6-44A0-BB60-FBA7F5303E9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{328E494E-E9C6-44A0-BB60-FBA7F5303E9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{328E494E-E9C6-44A0-BB60-FBA7F5303E9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{328E494E-E9C6-44A0-BB60-FBA7F5303E9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A636CB1-2AE7-4B40-9ADF-AADB94E4926F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A636CB1-2AE7-4B40-9ADF-AADB94E4926F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A636CB1-2AE7-4B40-9ADF-AADB94E4926F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A636CB1-2AE7-4B40-9ADF-AADB94E4926F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B687EA3-A961-4C1D-94C9-EC8B51B4505C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B687EA3-A961-4C1D-94C9-EC8B51B4505C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B687EA3-A961-4C1D-94C9-EC8B51B4505C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B687EA3-A961-4C1D-94C9-EC8B51B4505C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{034F7F21-25A2-4DEF-A05D-AED8D3502707}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{034F7F21-25A2-4DEF-A05D-AED8D3502707}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{034F7F21-25A2-4DEF-A05D-AED8D3502707}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{034F7F21-25A2-4DEF-A05D-AED8D3502707}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6B687EA3-A961-4C1D-94C9-EC8B51B4505C} = {1AF2C2DF-88A1-42D8-849D-AA9E077D8D96}
+		{034F7F21-25A2-4DEF-A05D-AED8D3502707} = {1AF2C2DF-88A1-42D8-849D-AA9E077D8D96}
 	EndGlobalSection
 EndGlobal
