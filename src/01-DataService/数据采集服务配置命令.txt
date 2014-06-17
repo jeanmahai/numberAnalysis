@@ -1,0 +1,13 @@
+安装命令：
+InstallUtil C:\Analysis28Svc\Beijing\Analysis28.DataService.BeijingHost.exe
+
+卸载命令：
+InstallUtil /u C:\Analysis28Svc\Beijing\Analysis28.DataService.BeijingHost.exe
+
+北京数据采集服务:
+在C:\Windows\Microsoft.NET\Framework\v4.0.30319\目录下放置配置文件SvcConfig.xml。
+在C:\Analysis28Svc\Beijing\目录下放置配置文件SvcConfig.xml。
+
+加拿大数据采集服务:
+在C:\Windows\Microsoft.NET\Framework\v4.0.30319\目录下放置配置文件SvcConfig.xml。
+在C:\Analysis28Svc\Canadan\目录下放置配置文件SvcConfig.xml。

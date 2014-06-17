@@ -28,10 +28,10 @@ namespace Analysis28.DataService.CanadaHost
             serviceInstaller.StartType = ServiceStartMode.Automatic;
 
             // ServiceName must equal those on ServiceBase derived classes.            
-            serviceInstaller.ServiceName = GetConfig.GetXMLValue("ServiceName");
+            serviceInstaller.ServiceName = GetConfig.GetXMLValue("CanadaServiceName");
 
-            serviceInstaller.DisplayName = GetConfig.GetXMLValue("ServiceName");
-            serviceInstaller.Description = GetConfig.GetXMLValue("ServiceDesciption");
+            serviceInstaller.DisplayName = GetConfig.GetXMLValue("CanadaServiceName");
+            serviceInstaller.Description = GetConfig.GetXMLValue("CanadaServiceDesciption");
 
             // Add installers to collection. Order is not important.
             Installers.Add(serviceInstaller);
@@ -41,7 +41,7 @@ namespace Analysis28.DataService.CanadaHost
 
         void MyProjectInstaller_AfterInstall(object sender, InstallEventArgs e)
         {
-            if (ServiceIsExist(GetConfig.GetXMLValue("ServiceName")))
+            if (ServiceIsExist(GetConfig.GetXMLValue("CanadaServiceName")))
                 StartService(new string[] { });
         }
 
@@ -53,7 +53,7 @@ namespace Analysis28.DataService.CanadaHost
             TransactedInstaller instutil = new TransactedInstaller();
             AssemblyInstaller assemblyInstaller = new AssemblyInstaller(serviceFileName, cmdline);
 
-            Console.WriteLine(GetConfig.GetXMLValue("ServiceName"));
+            Console.WriteLine(GetConfig.GetXMLValue("CanadaServiceName"));
 
             instutil.Installers.Add(assemblyInstaller);
             instutil.Install(new System.Collections.Hashtable());
@@ -69,7 +69,7 @@ namespace Analysis28.DataService.CanadaHost
             TransactedInstaller instutil = new TransactedInstaller();
             AssemblyInstaller assemblyInstaller = new AssemblyInstaller(serviceFileName, cmdline);
 
-            Console.WriteLine("开始卸载" + GetConfig.GetXMLValue("ServiceName") + "。");
+            Console.WriteLine("开始卸载" + GetConfig.GetXMLValue("CanadaServiceName") + "。");
 
             instutil.Installers.Add(assemblyInstaller);
             instutil.Uninstall(null);
@@ -79,9 +79,9 @@ namespace Analysis28.DataService.CanadaHost
 
         public static void StartService(string[] args)
         {
-            if (ServiceIsExist(GetConfig.GetXMLValue("ServiceName")))
+            if (ServiceIsExist(GetConfig.GetXMLValue("CanadaServiceName")))
             {
-                ServiceController sc = new ServiceController(GetConfig.GetXMLValue("ServiceName"));
+                ServiceController sc = new ServiceController(GetConfig.GetXMLValue("CanadaServiceName"));
                 if (sc.Status == ServiceControllerStatus.Stopped)
                 {
                     Console.WriteLine("开始服务……");
@@ -109,9 +109,9 @@ namespace Analysis28.DataService.CanadaHost
 
         public static void StopService()
         {
-            if (ServiceIsExist(GetConfig.GetXMLValue("ServiceName")))
+            if (ServiceIsExist(GetConfig.GetXMLValue("CanadaServiceName")))
             {
-                ServiceController sc = new ServiceController(GetConfig.GetXMLValue("ServiceName"));
+                ServiceController sc = new ServiceController(GetConfig.GetXMLValue("CanadaServiceName"));
                 if (sc.Status != ServiceControllerStatus.Stopped && sc.Status != ServiceControllerStatus.StopPending)
                 {
                     Console.WriteLine("停止服务……");
@@ -161,7 +161,7 @@ namespace Analysis28.DataService.CanadaHost
 
             AppDomain.CurrentDomain.UnhandledException += new UnhandledExceptionEventHandler(Program.ExceptionLogger);
 
-            EventLog.WriteEntry(GetConfig.GetXMLValue("ServiceName"), "服务接收到开始指令。", EventLogEntryType.Information);
+            EventLog.WriteEntry(GetConfig.GetXMLValue("CanadaServiceName"), "服务接收到开始指令。", EventLogEntryType.Information);
 
             SvcMain.running = true;
             mainThread = new Thread(new ThreadStart(SvcMain.Run));
@@ -182,7 +182,7 @@ namespace Analysis28.DataService.CanadaHost
                 }
             }
 
-            EventLog.WriteEntry(GetConfig.GetXMLValue("ServiceName"), "服务接收到终止指令，已终止。", EventLogEntryType.Information);
+            EventLog.WriteEntry(GetConfig.GetXMLValue("CanadaServiceName"), "服务接收到终止指令，已终止。", EventLogEntryType.Information);
         }
     }
 }

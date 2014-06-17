@@ -18,12 +18,11 @@ namespace Analysis28.DataService.CanadaHost
             object o = e.ExceptionObject;
             if (e.IsTerminating)
             {
-                EventLog.WriteEntry(GetConfig.GetXMLValue("ServiceName"), "致命错误！未处理的异常：" + o.ToString(), EventLogEntryType.Error);
-
+                EventLog.WriteEntry(GetConfig.GetXMLValue("CanadaServiceName"), "致命错误！未处理的异常：" + o.ToString(), EventLogEntryType.Error);
             }
             else
             {
-                EventLog.WriteEntry(GetConfig.GetXMLValue("ServiceName"), "错误！未处理的异常：" + o.ToString(), EventLogEntryType.Warning);
+                EventLog.WriteEntry(GetConfig.GetXMLValue("CanadaServiceName"), "错误！未处理的异常：" + o.ToString(), EventLogEntryType.Warning);
             }
         }
 
@@ -52,7 +51,7 @@ namespace Analysis28.DataService.CanadaHost
                         CollectionSvcInstaller.UnInstallService();
                         break;
                     default:
-                        Console.WriteLine(GetConfig.GetXMLValue("ServiceName") + "-后台服务程序。");
+                        Console.WriteLine(GetConfig.GetXMLValue("CanadaServiceName") + "-后台服务程序。");
                         string tmpHelpMsg = "参数 <start/stop/run/install/uninstall/help> ";
                         tmpHelpMsg += "\n start     参数将启动28分析数据服务。";
                         tmpHelpMsg += "\n stop      参数将停止28分析数据服务。";

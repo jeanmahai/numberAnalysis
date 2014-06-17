@@ -31,7 +31,7 @@ namespace Analysis28.DataService.BeijingHost
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            this.ServiceName = GetConfig.GetXMLValue("ServiceName");
+            this.ServiceName = GetConfig.GetXMLValue("BeijingServiceName");
         }
 
         #endregion

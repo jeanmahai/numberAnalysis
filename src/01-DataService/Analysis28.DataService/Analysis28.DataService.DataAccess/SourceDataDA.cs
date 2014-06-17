@@ -34,7 +34,7 @@ namespace Analysis28.DataService.DataAccess
         {
             CollectResultEntity result = new CollectResultEntity();
 
-            string sql = @"SELECT TOP 1 [PeriodNum],[RetTime] FROM [Helpmate].[dbo].[SourceData_28_Beijing] ORDER BY [PeriodNum] DESC";
+            string sql = @"SELECT TOP 1 [PeriodNum],[RetTime] FROM [Analysis28DB].[dbo].[SourceData_28_Beijing] ORDER BY [PeriodNum] DESC";
             DBHelper db = new DBHelper();
             try
             {
@@ -73,7 +73,7 @@ namespace Analysis28.DataService.DataAccess
         {
             CollectResultEntity result = new CollectResultEntity();
 
-            string sql = @"SELECT TOP 1 [PeriodNum],[RetTime] FROM [Helpmate].[dbo].[SourceData_28_Canada] ORDER BY [PeriodNum] DESC";
+            string sql = @"SELECT TOP 1 [PeriodNum],[RetTime] FROM [Analysis28DB].[dbo].[SourceData_28_Canada] ORDER BY [PeriodNum] DESC";
             DBHelper db = new DBHelper();
             try
             {
@@ -109,7 +109,7 @@ namespace Analysis28.DataService.DataAccess
         {
             List<CollectResultEntity> result = null;
 
-            string sql = @"SELECT [PeriodNum],[RetTime] FROM [Helpmate].[dbo].[SourceData_28_Beijing] WHERE [Status] = -1";
+            string sql = @"SELECT [PeriodNum],[RetTime] FROM [Analysis28DB].[dbo].[SourceData_28_Beijing] WHERE [Status] = -1";
             DBHelper db = new DBHelper();
             try
             {
@@ -145,7 +145,7 @@ namespace Analysis28.DataService.DataAccess
         {
             List<CollectResultEntity> result = null;
 
-            string sql = @"SELECT [PeriodNum],[RetTime] FROM [Helpmate].[dbo].[SourceData_28_Canada] WHERE [Status] = -1";
+            string sql = @"SELECT [PeriodNum],[RetTime] FROM [Analysis28DB].[dbo].[SourceData_28_Canada] WHERE [Status] = -1";
             DBHelper db = new DBHelper();
             try
             {
@@ -185,7 +185,7 @@ namespace Analysis28.DataService.DataAccess
 
             DateTime dtNow = (new GetTime()).NowTime(ConfigSource.Beijing);
             string sql = string.Empty;
-            string sqlFormat = @"INSERT INTO [Helpmate].[dbo].[SourceData_28_Beijing]
+            string sqlFormat = @"INSERT INTO [Analysis28DB].[dbo].[SourceData_28_Beijing]
 ([PeriodNum],[RetTime],[SiteSysNo],[RetOddNum],[RetNum],[RetMidNum],[CollectRet],[CollectTime],[Status])
 VALUES({0},'{1}',{2},{3},{4},'{5}','{6}','{7}',{8});";
             foreach (SourceDataEntity item in dataList)
@@ -221,7 +221,7 @@ VALUES({0},'{1}',{2},{3},{4},'{5}','{6}','{7}',{8});";
 
             DateTime dtNow = (new GetTime()).NowTime(ConfigSource.Canadan);
             string sql = string.Empty;
-            string sqlFormat = @"INSERT INTO [Helpmate].[dbo].[SourceData_28_Canada]
+            string sqlFormat = @"INSERT INTO [Analysis28DB].[dbo].[SourceData_28_Canada]
 ([PeriodNum],[RetTime],[SiteSysNo],[RetOddNum],[RetNum],[RetMidNum],[CollectRet],[CollectTime],[Status])
 VALUES({0},'{1}',{2},{3},{4},'{5}','{6}','{7}',{8});";
             foreach (SourceDataEntity item in dataList)
@@ -260,7 +260,7 @@ VALUES({0},'{1}',{2},{3},{4},'{5}','{6}','{7}',{8});";
 
             DateTime dtNow = (new GetTime()).NowTime(ConfigSource.Beijing);
             string sql = string.Empty;
-            string sqlFormat = @"UPDATE [Helpmate].[dbo].[SourceData_28_Beijing] SET [RetOddNum] = {0},
+            string sqlFormat = @"UPDATE [Analysis28DB].[dbo].[SourceData_28_Beijing] SET [RetOddNum] = {0},
 [RetNum] = {1}, [RetMidNum] = '{2}', [CollectRet] = '{3}', [CollectTime] = '{4}',
 [Status] = 1 WHERE [PeriodNum] = {5} AND [SiteSysNo] = {6};";
             foreach (SourceDataEntity item in dataList)
@@ -296,7 +296,7 @@ VALUES({0},'{1}',{2},{3},{4},'{5}','{6}','{7}',{8});";
 
             DateTime dtNow = (new GetTime()).NowTime(ConfigSource.Canadan);
             string sql = string.Empty;
-            string sqlFormat = @"UPDATE [Helpmate].[dbo].[SourceData_28_Canada] SET [RetOddNum] = {0},
+            string sqlFormat = @"UPDATE [Analysis28DB].[dbo].[SourceData_28_Canada] SET [RetOddNum] = {0},
 [RetNum] = {1}, [RetMidNum] = '{2}', [CollectRet] = '{3}', [CollectTime] = '{4}',
 [Status] = 1 WHERE [PeriodNum] = {5} AND [SiteSysNo] = {6};";
             foreach (SourceDataEntity item in dataList)
@@ -341,19 +341,19 @@ VALUES({0},'{1}',{2},{3},{4},'{5}','{6}','{7}',{8});";
 		IF(@SourceSysNo = 10001)
 		BEGIN
 			SELECT @NowPeriodNum = ISNULL(MAX(PeriodNum), 0), @MinPeriodNum = ISNULL(MIN(PeriodNum), 0)
-				FROM Helpmate.dbo.SourceData_28_Beijing(NOLOCK)
+				FROM Analysis28DB.dbo.SourceData_28_Beijing(NOLOCK)
 				WHERE SiteSysNo = @SiteSysNo AND [Status] = 1
 		END
 		ELSE IF(@SourceSysNo = 10002)
 		BEGIN
 			SELECT @NowPeriodNum = ISNULL(MAX(PeriodNum), 0), @MinPeriodNum = ISNULL(MIN(PeriodNum), 0)
-				FROM Helpmate.dbo.SourceData_28_Canada(NOLOCK)
+				FROM Analysis28DB.dbo.SourceData_28_Canada(NOLOCK)
 				WHERE SiteSysNo = @SiteSysNo AND [Status] = 1
 		END
 	END
 
 	--当前最大期未刷新，则刷新；已刷新过则不予刷新
-	IF(NOT EXISTS(SELECT 1 FROM Helpmate.dbo.OmitStatistics(NOLOCK) WHERE GameSysNo = @GameSysNo
+	IF(NOT EXISTS(SELECT 1 FROM Analysis28DB.dbo.OmitStatistics(NOLOCK) WHERE GameSysNo = @GameSysNo
 		AND SourceSysNo = @SourceSysNo AND SiteSysNo = @SiteSysNo AND NowPeriodNum = @NowPeriodNum))
 	BEGIN
 		DECLARE @TblList TABLE(TempRetNum INT, TempOmitCnt INT);
@@ -363,7 +363,7 @@ VALUES({0},'{1}',{2},{3},{4},'{5}','{6}','{7}',{8});";
 			BEGIN
 				INSERT INTO @TblList
 				SELECT RetNum, (@NowPeriodNum - ISNULL(MAX(PeriodNum), @MinPeriodNum)) AS OmitCnt
-					FROM Helpmate.dbo.SourceData_28_Beijing(NOLOCK)
+					FROM Analysis28DB.dbo.SourceData_28_Beijing(NOLOCK)
 					WHERE SiteSysNo = @SiteSysNo AND [Status] = 1
 					GROUP BY SiteSysNo, RetNum
 					ORDER BY RetNum ASC
@@ -372,25 +372,25 @@ VALUES({0},'{1}',{2},{3},{4},'{5}','{6}','{7}',{8});";
 			BEGIN
 				INSERT INTO @TblList
 				SELECT RetNum, (@NowPeriodNum - ISNULL(MAX(PeriodNum), @MinPeriodNum)) AS OmitCnt
-					FROM Helpmate.dbo.SourceData_28_Canada(NOLOCK)
+					FROM Analysis28DB.dbo.SourceData_28_Canada(NOLOCK)
 					WHERE SiteSysNo = @SiteSysNo AND [Status] = 1
 					GROUP BY SiteSysNo, RetNum
 					ORDER BY RetNum ASC
 			END
 		END
 		--最大遗漏期数
-		UPDATE Helpmate.dbo.OmitStatistics SET MaxOmitCnt = OmitCnt
+		UPDATE Analysis28DB.dbo.OmitStatistics SET MaxOmitCnt = OmitCnt
 		WHERE RetNum IN
 		(SELECT TempRetNum FROM @TblList WHERE TempOmitCnt = 0)
 		AND GameSysNo = @GameSysNo AND SourceSysNo = @SourceSysNo
 		AND SiteSysNo = @SiteSysNo AND MaxOmitCnt < OmitCnt
 		--遗漏期数
-		UPDATE Helpmate.dbo.OmitStatistics SET OmitCnt = TempOmitCnt, NowPeriodNum = @NowPeriodNum
+		UPDATE Analysis28DB.dbo.OmitStatistics SET OmitCnt = TempOmitCnt, NowPeriodNum = @NowPeriodNum
 			FROM @TblList AS Temp
 			WHERE RetNum = Temp.TempRetNum AND GameSysNo = @GameSysNo
 			AND SourceSysNo = @SourceSysNo AND SiteSysNo = @SiteSysNo
 		--未出现的
-		UPDATE Helpmate.dbo.OmitStatistics SET OmitCnt = @NowPeriodNum - @MinPeriodNum,
+		UPDATE Analysis28DB.dbo.OmitStatistics SET OmitCnt = @NowPeriodNum - @MinPeriodNum,
 			MaxOmitCnt = @NowPeriodNum - @MinPeriodNum, NowPeriodNum = @NowPeriodNum
 			WHERE NowPeriodNum = 0 AND GameSysNo = @GameSysNo AND SourceSysNo = @SourceSysNo
 			AND SiteSysNo = @SiteSysNo

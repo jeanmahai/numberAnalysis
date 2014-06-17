@@ -31,7 +31,7 @@ namespace Analysis28.DataService.CanadaHost
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            this.ServiceName = GetConfig.GetXMLValue("ServiceName");
+            this.ServiceName = GetConfig.GetXMLValue("CanadaServiceName");
         }
 
         #endregion

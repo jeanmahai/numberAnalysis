@@ -1,8 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <config>
   <ServiceName>28分析北京数据采集服务</ServiceName>
-  <ServiceDesciption>28分析北京数据采集服务进程，采集北京快乐8数据，如果该进程被关闭，则28分析北京数据采集服务的某些功能将无法正常运行。</ServiceDesciption>
-  <SqlServices>Data Source = .;User ID = sa; Password = 123;Initial Catalog=Helpmate;Max Pool Size=500;</SqlServices>
+  <BeijingServiceName>28分析北京数据采集服务</BeijingServiceName>
+  <BeijingServiceDesciption>28分析北京数据采集服务进程，采集北京快乐8数据，如果该进程被关闭，则28分析北京数据采集服务的某些功能将无法正常运行。</BeijingServiceDesciption>
+  <SqlServices>Data Source = .;User ID = sa; Password = 123;Initial Catalog=Analysis28DB;Max Pool Size=500;</SqlServices>
   <PeriodNumUrl><![CDATA[http://www.bjfcdt.gov.cn/Happy8/V1/ImageAward.aspx?periodnum={0}]]></PeriodNumUrl>
   <GetNewPeriodNumUrl><![CDATA[http://www.bjfcdt.gov.cn/LtrAPI/happy8/v1/getAwardNumber.aspx]]></GetNewPeriodNumUrl>
   <PeriodNumUrl2><![CDATA[http://www.bwlc.gov.cn/bulletin/search.jsp?id=3&period={0}]]></PeriodNumUrl2>

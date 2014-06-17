@@ -28,10 +28,10 @@ namespace Analysis28.DataService.BeijingHost
             serviceInstaller.StartType = ServiceStartMode.Automatic;
 
             // ServiceName must equal those on ServiceBase derived classes.            
-            serviceInstaller.ServiceName = GetConfig.GetXMLValue("ServiceName");
+            serviceInstaller.ServiceName = GetConfig.GetXMLValue("BeijingServiceName");
 
-            serviceInstaller.DisplayName = GetConfig.GetXMLValue("ServiceName");
-            serviceInstaller.Description = GetConfig.GetXMLValue("ServiceDesciption");
+            serviceInstaller.DisplayName = GetConfig.GetXMLValue("BeijingServiceName");
+            serviceInstaller.Description = GetConfig.GetXMLValue("BeijingServiceDesciption");
 
             // Add installers to collection. Order is not important.
             Installers.Add(serviceInstaller);
@@ -41,7 +41,7 @@ namespace Analysis28.DataService.BeijingHost
 
         void MyProjectInstaller_AfterInstall(object sender, InstallEventArgs e)
         {
-            if (ServiceIsExist(GetConfig.GetXMLValue("ServiceName")))
+            if (ServiceIsExist(GetConfig.GetXMLValue("BeijingServiceName")))
                 StartService(new string[] { });
         }
 
@@ -53,7 +53,7 @@ namespace Analysis28.DataService.BeijingHost
             TransactedInstaller instutil = new TransactedInstaller();
             AssemblyInstaller assemblyInstaller = new AssemblyInstaller(serviceFileName, cmdline);
 
-            Console.WriteLine(GetConfig.GetXMLValue("ServiceName"));
+            Console.WriteLine(GetConfig.GetXMLValue("BeijingServiceName"));
 
             instutil.Installers.Add(assemblyInstaller);
             instutil.Install(new System.Collections.Hashtable());
@@ -69,7 +69,7 @@ namespace Analysis28.DataService.BeijingHost
             TransactedInstaller instutil = new TransactedInstaller();
             AssemblyInstaller assemblyInstaller = new AssemblyInstaller(serviceFileName, cmdline);
 
-            Console.WriteLine("开始卸载" + GetConfig.GetXMLValue("ServiceName") + "。");
+            Console.WriteLine("开始卸载" + GetConfig.GetXMLValue("BeijingServiceName") + "。");
 
             instutil.Installers.Add(assemblyInstaller);
             instutil.Uninstall(null);
@@ -79,9 +79,9 @@ namespace Analysis28.DataService.BeijingHost
 
         public static void StartService(string[] args)
         {
-            if (ServiceIsExist(GetConfig.GetXMLValue("ServiceName")))
+            if (ServiceIsExist(GetConfig.GetXMLValue("BeijingServiceName")))
             {
-                ServiceController sc = new ServiceController(GetConfig.GetXMLValue("ServiceName"));
+                ServiceController sc = new ServiceController(GetConfig.GetXMLValue("BeijingServiceName"));
                 if (sc.Status == ServiceControllerStatus.Stopped)
                 {
                     Console.WriteLine("开始服务……");
@@ -109,9 +109,9 @@ namespace Analysis28.DataService.BeijingHost
 
         public static void StopService()
         {
-            if (ServiceIsExist(GetConfig.GetXMLValue("ServiceName")))
+            if (ServiceIsExist(GetConfig.GetXMLValue("BeijingServiceName")))
             {
-                ServiceController sc = new ServiceController(GetConfig.GetXMLValue("ServiceName"));
+                ServiceController sc = new ServiceController(GetConfig.GetXMLValue("BeijingServiceName"));
                 if (sc.Status != ServiceControllerStatus.Stopped && sc.Status != ServiceControllerStatus.StopPending)
                 {
                     Console.WriteLine("停止服务……");
@@ -161,7 +161,7 @@ namespace Analysis28.DataService.BeijingHost
 
             AppDomain.CurrentDomain.UnhandledException += new UnhandledExceptionEventHandler(Program.ExceptionLogger);
 
-            EventLog.WriteEntry(GetConfig.GetXMLValue("ServiceName"), "服务接收到开始指令。", EventLogEntryType.Information);
+            EventLog.WriteEntry(GetConfig.GetXMLValue("BeijingServiceName"), "服务接收到开始指令。", EventLogEntryType.Information);
 
             SvcMain.running = true;
             mainThread = new Thread(new ThreadStart(SvcMain.Run));
@@ -182,7 +182,7 @@ namespace Analysis28.DataService.BeijingHost
                 }
             }
 
-            EventLog.WriteEntry(GetConfig.GetXMLValue("ServiceName"), "服务接收到终止指令，已终止。", EventLogEntryType.Information);
+            EventLog.WriteEntry(GetConfig.GetXMLValue("BeijingServiceName"), "服务接收到终止指令，已终止。", EventLogEntryType.Information);
         }
     }
 }

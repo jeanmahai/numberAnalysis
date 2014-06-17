@@ -1,8 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <config>
   <ServiceName>28分析加拿大数据采集服务</ServiceName>
-  <ServiceDesciption>28分析加拿大数据采集服务进程，采集加拿大快乐8数据，如果该进程被关闭，则28分析加拿大数据采集服务的某些功能将无法正常运行。</ServiceDesciption>
-  <SqlServices>Data Source = .;User ID = sa; Password = sa!@#;Initial Catalog=Helpmate;Max Pool Size=500;</SqlServices>
+  <CanadaServiceName>28分析加拿大数据采集服务</CanadaServiceName>
+  <CanadaServiceDesciption>28分析加拿大数据采集服务进程，采集加拿大快乐8数据，如果该进程被关闭，则28分析加拿大数据采集服务的某些功能将无法正常运行。</CanadaServiceDesciption>
+  <SqlServices>Data Source = .;User ID = sa; Password = sa!@#;Initial Catalog=Analysis28DB;Max Pool Size=500;</SqlServices>
   <PeriodNumUrl>http://lotto.bclc.com/services2/keno/draw/{0}</PeriodNumUrl>
   <GetNewPeriodNumUrl>http://lotto.bclc.com/services2/keno/draw/{0}</GetNewPeriodNumUrl>
   <IsDatabaseMsg>1</IsDatabaseMsg>

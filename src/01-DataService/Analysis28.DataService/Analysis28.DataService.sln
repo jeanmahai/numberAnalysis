@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Analysis28.DataService.Beij
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Analysis28.DataService.CanadaHost", "Host\Analysis28.DataService.CanadaHost\Analysis28.DataService.CanadaHost.csproj", "{034F7F21-25A2-4DEF-A05D-AED8D3502707}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Analysis28.DataService.CanadaProxy", "Host\Analysis28.DataService.CanadaProxy\Analysis28.DataService.CanadaProxy.csproj", "{565F2DDA-C6E2-498D-8B58-D588861BDB93}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{034F7F21-25A2-4DEF-A05D-AED8D3502707}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{034F7F21-25A2-4DEF-A05D-AED8D3502707}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{034F7F21-25A2-4DEF-A05D-AED8D3502707}.Release|Any CPU.Build.0 = Release|Any CPU
+		{565F2DDA-C6E2-498D-8B58-D588861BDB93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{565F2DDA-C6E2-498D-8B58-D588861BDB93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{565F2DDA-C6E2-498D-8B58-D588861BDB93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{565F2DDA-C6E2-498D-8B58-D588861BDB93}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -52,5 +58,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{6B687EA3-A961-4C1D-94C9-EC8B51B4505C} = {1AF2C2DF-88A1-42D8-849D-AA9E077D8D96}
 		{034F7F21-25A2-4DEF-A05D-AED8D3502707} = {1AF2C2DF-88A1-42D8-849D-AA9E077D8D96}
+		{565F2DDA-C6E2-498D-8B58-D588861BDB93} = {1AF2C2DF-88A1-42D8-849D-AA9E077D8D96}
 	EndGlobalSection
 EndGlobal
