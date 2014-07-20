@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SohoWeb.Service", "SohoWeb.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SohoWeb.WebSite", "SohoWeb.WebSite\SohoWeb.WebSite.csproj", "{3D1D0CB1-7C1E-4B8E-8ECD-B7D77A4D0AD0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SohoWeb.UnitTest", "SohoWeb.UnitTest\SohoWeb.UnitTest.csproj", "{1556447E-D8FD-4C8E-B859-3956EFE21A89}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,10 @@ Global
 		{3D1D0CB1-7C1E-4B8E-8ECD-B7D77A4D0AD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D1D0CB1-7C1E-4B8E-8ECD-B7D77A4D0AD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D1D0CB1-7C1E-4B8E-8ECD-B7D77A4D0AD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1556447E-D8FD-4C8E-B859-3956EFE21A89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1556447E-D8FD-4C8E-B859-3956EFE21A89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1556447E-D8FD-4C8E-B859-3956EFE21A89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1556447E-D8FD-4C8E-B859-3956EFE21A89}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

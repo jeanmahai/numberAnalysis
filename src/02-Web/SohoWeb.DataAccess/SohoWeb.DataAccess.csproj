@@ -51,6 +51,7 @@
     <Compile Include="ControlPanel\RolesMgtDA.cs" />
     <Compile Include="ControlPanel\UserAuthDA.cs" />
     <Compile Include="ControlPanel\UsersMgtDA.cs" />
+    <Compile Include="Customer\CustomerMgtDA.cs" />
     <Compile Include="DataAccessUtil.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

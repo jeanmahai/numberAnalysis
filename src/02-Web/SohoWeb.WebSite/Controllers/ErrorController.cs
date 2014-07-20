@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace SohoWeb.WebMgt.Controllers
+namespace SohoWeb.WebSite.Controllers
 {
     /// <summary>
     /// 错误处理

@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="text/html; charset=gb2312;width=device-width" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>@(ViewBag.Title) - 某某某</title>
+</head>
+<!--[if lt IE 7]><body class="ie6"><![endif]-->
+<!--[if IE 7]><body class="ie7"><![endif]-->
+<!--[if IE 8]><body class="ie8"><![endif]-->
+<!--[if IE 9]><body class="ie9"><![endif]-->
+<!--[if !IE]><!-->
+<body>
+    <!--<![endif]-->
+    <!--页头-->
+    @Html.Partial("_Header")
+    <!--页面主体-->
+     @RenderSection("rsContent", required: true)
+    <!--页脚-->
+    @Html.Partial("_Footer")
+</body>
+</html>
