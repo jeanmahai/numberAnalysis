@@ -49,6 +49,8 @@
     <Compile Include="ControlPanel\RolesMgtService.cs" />
     <Compile Include="ControlPanel\UserAuthService.cs" />
     <Compile Include="ControlPanel\UsersMgtService.cs" />
+    <Compile Include="Customer\CustomerAuthService.cs" />
+    <Compile Include="Customer\CustomerMgtService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

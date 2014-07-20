@@ -5,6 +5,7 @@ using System.Configuration;
 using Soho.Utility.Web;
 using Soho.Utility.Web.Framework;
 using SohoWeb.WebSite.ViewModels;
+using SohoWeb.Service.Customer;
 
 namespace SohoWeb.WebSite
 {
@@ -30,11 +31,11 @@ namespace SohoWeb.WebSite
             else if (user != null && user.RememberLogin == true)
             {
                 user.LoginDate = DateTime.Now;
-                int mobileLoginTimeout = 30;
+                int mobileLoginTimeout = 30000000;
                 if (!string.IsNullOrWhiteSpace(ConfigurationManager.AppSettings["MobileLoginTimeout"]))
                 {
                     int.TryParse(ConfigurationManager.AppSettings["MobileLoginTimeout"], out mobileLoginTimeout);
-                    mobileLoginTimeout = mobileLoginTimeout <= 0 ? 30 : mobileLoginTimeout;
+                    mobileLoginTimeout = mobileLoginTimeout <= 0 ? 30000000 : mobileLoginTimeout;
                 }
                 user.Timeout = DateTime.Now.AddMinutes(mobileLoginTimeout);
             }
@@ -49,24 +50,25 @@ namespace SohoWeb.WebSite
         /// <summary>
         /// 登录
         /// </summary>
-        /// <param name="userID">用户ID</param>
-        /// <param name="userPwd">用户密码，明文</param>
+        /// <param name="customerID">用户ID</param>
+        /// <param name="customerPwd">用户密码，明文</param>
         /// <param name="validateCode">验证码</param>
+        /// <param name="IP">IP地址</param>
         /// <returns>true-登录成功；false-登录失败</returns>
-        public bool Login(string userID, string userPwd, string validateCode)
+        public bool Login(string customerID, string customerPwd, string validateCode, string IP)
         {
-            bool result = true;// UserAuthService.Instance.Login(userID, userPwd, validateCode);
+            bool result = CustomerAuthService.Instance.Login(customerID, customerPwd, validateCode, IP);
             if (result)
             {
-                //var user = UserAuthService.Instance.GetUserByUserID(userID);
+                var customer = CustomerAuthService.Instance.GetCustomerByCustomerID(customerID);
                 LoginAuthVM authUser = new LoginAuthVM()
                 {
-                    //UserSysNo = user.SysNo.Value,
-                    //UserID = user.UserID,
-                    //UserName = user.UserName,
-                    //LoginDate = DateTime.Now,
-                    //Timeout = DateTime.Now.AddMinutes(30),
-                    //RememberLogin = true
+                    UserSysNo = customer.SysNo.Value,
+                    UserID = customer.CustomerID,
+                    UserName = customer.CustomerName,
+                    LoginDate = DateTime.Now,
+                    Timeout = DateTime.Now.AddMinutes(30000000),
+                    RememberLogin = true
                 };
                 WriteUserInfo(authUser);
             }

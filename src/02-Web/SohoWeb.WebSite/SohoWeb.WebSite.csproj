@@ -108,6 +108,11 @@
     <Compile Include="App_Start\AuthMgr.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\MasterController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -127,7 +132,51 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
+    <Folder Include="Views\Login\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Configuration\Data\Customer\CustomerMgt.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Configuration\Data\Database.config" />
+    <Content Include="Configuration\Data\DbCommandFiles.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Configuration\BusinessRoute.config" />
+    <Content Include="Configuration\Cookie.config" />
+    <Content Include="Configuration\Route.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="build.bat" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SohoWeb.Entity\SohoWeb.Entity.csproj">
+      <Project>{a957fac5-c6e5-415b-b2b1-654c5263c23f}</Project>
+      <Name>SohoWeb.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SohoWeb.Service\SohoWeb.Service.csproj">
+      <Project>{1eb8735d-d334-4425-b5e7-7022c27d3642}</Project>
+      <Name>SohoWeb.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\AuthError.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\Error404.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_Main.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_Header.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_Footer.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
